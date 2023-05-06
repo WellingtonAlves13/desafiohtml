@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    box-sizing: border-box; 
+    background: linear-gradient(rgb(0, 247, 255), rgb(243, 243, 243));
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.apresentacao{
+    padding: 3%;        
+    font-family: 'Krona One', sans-serif;
+}
+td{
+    flex-direction: row;
+    display: flex;
+    align-items: baseline;
+    align-content: space-between;    
+    border: 1px solid black;
+    font-family: 'Krona One', sans-serif;
+}
+
+tr:hover{    
+    background-color: gray;
+}
+
+th{ 
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    cursor: pointer;
+    
+}
+
+.form-group{        
+    display: flex;    
+    flex-direction: column;    
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid black;    
+    font-family: 'Montserrat', sans-serif 
+}
+.form-control{         
+    border-radius: 10px;    
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;   
+    
+}
+.table{           
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;     
+    border-radius: 10px;    
+    margin: 10px;
+    padding: 10px;
+    color: aqua;
+    background-color: rgb(99, 99, 99);
+    font-family: 'Montserrat', sans-serif
+}
+.campoBusca{
+    gap: 20px;
+    display: flex;    
+    align-items: center;
+    flex-direction: row;   
+    color: white;
+}
+.campoBusca:hover{
+    color: red;
+}
+
+
+.buscar{    
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;    
+    background-color: aqua;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+}
+.salvar{ 
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
+    background-color: green;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+}
+.excluir{    
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;    
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    background-color: red;
+    cursor: pointer;
+}
+.rodape{    
+    padding: 24px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;    
+}
+input:required{
+    border-radius: 10px;
+    border: 1px solid red;
+}
+input:valid{    
+    border: 1px solid green;
+}
+
+    

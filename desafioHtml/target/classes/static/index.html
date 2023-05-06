@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuarios</title>    
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <h2 class="apresentacao">CADASTRAMENTO DE USUARIOS</h2>
+    <div id="app" class="container">
+        <form id="formulario" v-on:submit.prevent="salvar" >            
+           
+            <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <input v-model="usuario.nome" type="text" class="form-control" id="nome" placeholder="Nome Completo" required>                
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="cpf">CPF</label>
+                <input v-model="usuario.cpf" type="text" class="form-control" id="cpf" pattern="[0-9]{3}.[0-9]{3}.[0-9]{03}-[0-9]{2}" title="XXX.XXX.XXX-XX" placeholder="XXX.XXX.XXX-XX" minlength="14" maxlength="14" required>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="celular">Celular</label>
+                <input v-model="usuario.celular" type="tel" class="form-control" id="celular" pattern="[(][0-9]{2}[)] [0-9]{5}-[0-9]{4}" title="(XX) XXXXX-XXXX" placeholder="(XX) XXXXX-XXXX" required>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="dt-nascimento">Data de Nascimento</label>                                                
+                <input v-model="usuario.dataNascimento" type="text" class="form-control" id="dt-nascimento" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" title="XX/XX/XXXX" placeholder=" XX/XX/XXXX" minlength="10" maxlength="10" required>
+            </div>            
+                <button v-on:sumbit id="btn-salvar" class="salvar">Salvar</button>          
+        </form>
+       
+
+        <form>
+            <div class="form-group">
+                <input v-model="search" type="text" class="form-control" id="input-search" placeholder="Busca por Nome:">                
+            </div>
+            <button v-on:click="buscarPorNome" class="buscar">Buscar</button>
+        </form>
+
+        <table id="tabela-usuarios" class="table">
+            <thead>
+                <tr>
+                    <th scope="col" >Nome:</th>
+                    <th scope="col" >CPF:</th>
+                    <th scope="col" >Celular:</th>
+                    <th scope="col" >Data de Nascimento:</th>
+                </tr>
+            </thead>
+
+            <tbody>                
+                <tr class="campoBusca" v-for="usuario in usuarios" :key="usuario.id">                    
+                    <td>{{ usuario.nome }}</td>                    
+                    <td>{{ usuario.cpf }}</td>
+                    <td>{{ usuario.celular }}</td>
+                    <td>{{ usuario.dataNascimento }}</td>                    
+                </tr>
+            </tbody>
+        </table>
+        <button v-on:click="excluirTodosUsuarios" class="excluir">Excluir todos os usuários</button>
+        
+    </div>
+
+    <footer>
+        <h6 class="rodape">Developer by BLUESOFT and Wellington Alves</h6>
+    </footer>
+       
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+    
+</body>
+</html>
